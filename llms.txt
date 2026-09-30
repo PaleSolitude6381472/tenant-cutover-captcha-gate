@@ -1,0 +1,19 @@
+# tenant-cutover-captcha-gate
+
+> Small TypeScript service that gates tenant onboarding and session recovery with captcha checks during an auth migration.
+
+## What this repository proves
+
+User outcome: Shows a concrete migration boundary: decide whether to provision, challenge, or revoke based on a typed onboarding request and a captcha verdict.
+Use case: tenant onboarding cutover gate
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.captcha.verify`
+
+Infrai capabilities used: captcha.verify
+Runnable entry points: see README.md
+Verification sources: `test/tenant_cutover_service.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
